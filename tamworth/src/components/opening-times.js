@@ -4,16 +4,16 @@ import styled from "styled-components"
 import { Section, SectionHeader } from "./section"
 import { spacers } from "../theme"
 
-export const Table = styled.table`
+const Table = styled.table`
   margin-left: -${spacers.md};
   margin-top: -${spacers.sm};
 `
 
-export const TableRow = styled.tr`
+const TableRow = styled.tr`
   padding-top: ${spacers.sm};
 `
 
-export const TableData = styled.td`
+const TableData = styled.td`
   padding-left: ${spacers.md};
 
   &:first-child {

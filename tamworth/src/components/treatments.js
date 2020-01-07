@@ -1,113 +1,166 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import styled from "styled-components"
+import Slider from "react-slick"
+import Helmet from "react-helmet"
 
 import { Section, SectionHeader } from "./section"
-import { md } from "../utils"
-import { colors, spacers } from "../theme"
+import { List, ListItem, ItemTitle } from "./list"
+import { Columns, NarrowColumn, WideColumn } from "./columns"
+import { spacers } from "../theme"
 
-export const Columns = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -${spacers.xl};
-  margin-top: -${spacers.xl};
-`
-
-export const WideColumn = styled.div`
+const SliderContainer = styled.div`
   width: 100%;
-  padding-left: ${spacers.xl};
-  padding-top: ${spacers.xl};
-
-  ${md(`
-      width: 60%;
-    `)};
+  margin-right: ${spacers.md};
 `
 
-export const NarrowColumn = styled.div`
+const SliderImage = styled(Img)`
+  display: block;
+  height: 100%;
   width: 100%;
-  padding-left: ${spacers.xl};
-  padding-top: ${spacers.xl};
-
-  ${md(`
-      width: 40%;
-    `)};
+  margin: 0 auto;
 `
 
-export const PriceContainer = styled.section`
-  padding: ${spacers.md};
-
-  background-color: ${colors.black};
-  color: ${colors.white};
-`
-
-export const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  margin-top: -${spacers.lg};
-`
-
-export const ListItem = styled.li`
-  padding-top: ${spacers.md};
-`
-
-export const ItemTitle = styled.h3`
-  padding-bottom: ${spacers.sm};
+const ImageSliderContaner = styled.div`
+  display: flex !important;
+  align-items: center;
 `
 
 export const Treatments = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      surgeryImage: file(relativePath: { eq: "surgery-inner.jpg" }) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      foot1Image: file(relativePath: { eq: "foot-1.jpg" }) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      foot2Image: file(relativePath: { eq: "foot-2.jpg" }) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      foot3Image: file(relativePath: { eq: "foot-3.jpg" }) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      foot4Image: file(relativePath: { eq: "foot-4.jpg" }) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      foot5Image: file(relativePath: { eq: "foot-5.jpg" }) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      foot6Image: file(relativePath: { eq: "foot-6.jpg" }) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+
   return (
-    <Section>
-      <SectionHeader>Treatments</SectionHeader>
-      <Columns>
-        <WideColumn>
-          <List>
-            <ListItem>
-              <ItemTitle>Corns, Callouses & Hard Skin</ItemTitle>
-            </ListItem>
-            <ListItem>
-              <ItemTitle>In growing and problem nails</ItemTitle>
-            </ListItem>
-            <ListItem>
-              <ItemTitle>
-                Verruca – painless laser therapy and cryosurgery
-              </ItemTitle>
-            </ListItem>
-            <ListItem>
-              <ItemTitle>Diabetic foot care</ItemTitle>
-            </ListItem>
-            <ListItem>
-              <ItemTitle>Off the shelf insoles</ItemTitle>
-            </ListItem>
-            <ListItem>
-              <ItemTitle>
-                Bio Mechanical examination for foot and lower limb and foot pain
-              </ItemTitle>
-            </ListItem>
-            <ListItem>
-              <ItemTitle>Advice</ItemTitle>
-            </ListItem>
-          </List>
-        </WideColumn>
-        <NarrowColumn>
-          <PriceContainer>
-            <h2>Prices</h2>
+    <>
+      <Helmet>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          charset="UTF-8"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
+      </Helmet>
+      <Section>
+        <SectionHeader>Treatments</SectionHeader>
+        <Columns>
+          <WideColumn>
             <List>
               <ListItem>
-                <ItemTitle>Surgery</ItemTitle>
-                <span>£24.00</span>
+                <ItemTitle>Corns, Callouses & Hard Skin</ItemTitle>
               </ListItem>
               <ListItem>
-                <ItemTitle>Pensioners in surgery (over 66)</ItemTitle>
-                <span>£20.00</span>
+                <ItemTitle>In growing and problem nails</ItemTitle>
               </ListItem>
               <ListItem>
-                <ItemTitle>Home visits</ItemTitle>
-                <span>£26.00</span>
+                <ItemTitle>
+                  Verruca – painless laser therapy and cryosurgery
+                </ItemTitle>
+              </ListItem>
+              <ListItem>
+                <ItemTitle>Diabetic foot care</ItemTitle>
+              </ListItem>
+              <ListItem>
+                <ItemTitle>Off the shelf insoles</ItemTitle>
+              </ListItem>
+              <ListItem>
+                <ItemTitle>
+                  Bio Mechanical examination for foot and lower limb and foot
+                  pain
+                </ItemTitle>
+              </ListItem>
+              <ListItem>
+                <ItemTitle>Advice</ItemTitle>
               </ListItem>
             </List>
-          </PriceContainer>
-        </NarrowColumn>
-      </Columns>
-    </Section>
+          </WideColumn>
+          <NarrowColumn>
+            <SliderContainer>
+              <Slider dots autoplay infinite fade autoplaySpeed={3000}>
+                <ImageSliderContaner>
+                  <SliderImage
+                    fixed={data.surgeryImage.childImageSharp.fixed}
+                  />
+                </ImageSliderContaner>
+                <ImageSliderContaner>
+                  <SliderImage fixed={data.foot1Image.childImageSharp.fixed} />
+                </ImageSliderContaner>
+                <ImageSliderContaner>
+                  <SliderImage fixed={data.foot2Image.childImageSharp.fixed} />
+                </ImageSliderContaner>
+                <ImageSliderContaner>
+                  <SliderImage fixed={data.foot3Image.childImageSharp.fixed} />
+                </ImageSliderContaner>
+                <ImageSliderContaner>
+                  <SliderImage fixed={data.foot4Image.childImageSharp.fixed} />
+                </ImageSliderContaner>
+                <ImageSliderContaner>
+                  <SliderImage fixed={data.foot5Image.childImageSharp.fixed} />
+                </ImageSliderContaner>
+                <ImageSliderContaner>
+                  <SliderImage fixed={data.foot6Image.childImageSharp.fixed} />
+                </ImageSliderContaner>
+              </Slider>
+            </SliderContainer>
+          </NarrowColumn>
+        </Columns>
+      </Section>
+    </>
   )
 }

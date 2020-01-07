@@ -8,6 +8,7 @@ import { OpeningTimes } from "../components/opening-times"
 import { Intro } from "../components/intro"
 import { Treatments } from "../components/treatments"
 import { Contact } from "../components/contact"
+import { Prices } from "../components/prices"
 import { page, spacers } from "../theme"
 
 const SiteWrap = styled.main`
@@ -24,6 +25,7 @@ const IndexPage = () => (
       <OpeningTimes />
       <Intro />
       <Treatments />
+      <Prices />
       <Contact />
     </SiteWrap>
   </Layout>

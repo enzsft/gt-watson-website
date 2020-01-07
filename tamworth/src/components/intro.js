@@ -1,19 +1,24 @@
 import React from "react"
-import styled from "styled-components"
-import Img from "gatsby-image"
+import styled, { css } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import { spacers, typography } from "../theme"
 import { sm } from "../utils"
 import { Section, SectionHeader } from "./section"
 
 const AvatarCircle = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto;
   border-radius: 50%;
 
   overflow: hidden;
+
+  ${sm(css`
+    width: 200px;
+    height: 200px;
+  `)};
 `
 
 const AvatarName = styled.span`
@@ -25,19 +30,26 @@ const AvatarName = styled.span`
 const Columns = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-left: -${spacers.xl};
-  margin-top: -${spacers.xl};
-  padding-bottom: ${spacers.xl};
+  margin-left: -${spacers.md};
+  margin-top: -${spacers.md};
+  padding-bottom: ${spacers.md};
+
+  ${sm(css`
+    margin-left: -${spacers.xl};
+    margin-top: -${spacers.xl};
+    padding-bottom: ${spacers.xl};
+  `)};
 `
 
 const Column = styled.div`
-  width: 100%;
+  width: 50%;
   text-align: center;
-  padding-left: ${spacers.xl};
-  padding-top: ${spacers.xl};
+  padding-left: ${spacers.md};
+  padding-top: ${spacers.md};
 
-  ${sm(`
-    width: 50%;
+  ${sm(css`
+    padding-left: ${spacers.xl};
+    padding-top: ${spacers.xl};
   `)};
 `
 
@@ -50,15 +62,15 @@ export const Intro = () => {
     query {
       gordonImage: file(relativePath: { eq: "gordon.jpg" }) {
         childImageSharp {
-          fixed(width: 200) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 200) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       lisaImage: file(relativePath: { eq: "lisa.jpg" }) {
         childImageSharp {
-          fixed(width: 200) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 200) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -71,13 +83,13 @@ export const Intro = () => {
       <Columns>
         <Column>
           <AvatarCircle>
-            <Img fixed={data.gordonImage.childImageSharp.fixed} />
+            <Img fluid={data.gordonImage.childImageSharp.fluid} />
           </AvatarCircle>
           <AvatarName>Gordon Watson</AvatarName>
         </Column>
         <Column>
           <AvatarCircle>
-            <Img fixed={data.lisaImage.childImageSharp.fixed} />
+            <Img fluid={data.lisaImage.childImageSharp.fluid} />
           </AvatarCircle>
           <AvatarName>Lisa Watson</AvatarName>
         </Column>

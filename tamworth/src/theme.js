@@ -1,5 +1,5 @@
 export const breakpoints = {
-  sm: "480px",
+  sm: "700px",
   md: "980px",
   lg: "1200px",
 }
@@ -19,7 +19,10 @@ export const layers = {
 }
 
 export const nav = {
-  height: "80px",
+  height: {
+    def: "83",
+    md: "87px",
+  },
 }
 
 export const page = {
