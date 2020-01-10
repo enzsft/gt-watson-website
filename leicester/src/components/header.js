@@ -1,42 +1,67 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import styled, { css } from "styled-components"
+import { page, nav, spacers, colors, typography } from "../theme"
+import { sm } from "../utils"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Nav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: ${page.width};
+  height: ${nav.height.def};
+  margin: 0 auto;
+  padding: ${spacers.sm} ${spacers.md};
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+  ${sm(`
+    height: ${nav.height.md};
+    display: flex;
+    padding: ${spacers.md};
+    align-items: baseline;
+  `)}
+`
+
+const BrandText = styled.span`
+  display: block;
+  font-family: ${typography.fontFamily};
+  padding-right: ${spacers.md};
+  font-size: ${typography.fontSizes.lg};
+  color: ${colors.black};
+  opacity: 1;
+
+  ${sm(`
+    font-size: ${typography.fontSizes.xl};
+  `)}
+`
+
+const ContactText = styled.span`
+  display: block;
+  font-family: ${typography.fontFamily};
+  font-size: ${typography.fontSizes.sm};
+  color: ${colors.black};
+  opacity: 1;
+
+  ${sm(`
+    font-size: ${typography.fontSizes.md};
+  `)}
+`
+
+const ContactLink = styled.a`
+  display: block;
+  color: ${colors.black};
+  word-break: break-all;
+
+  ${sm(`
+    display: inline;
+  `)}
+`
+
+export const Header = () => {
+  return (
+    <Nav>
+      <BrandText>GT Watson</BrandText>
+      <ContactText>
+        Call us on <ContactLink href="tel:01827 62079">01827 62079</ContactLink>
+      </ContactText>
+    </Nav>
+  )
 }
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header

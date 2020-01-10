@@ -1,20 +1,33 @@
 import React from "react"
-import { Link } from "gatsby"
+import styled from "styled-components"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import { Layout } from "../components/layout"
+import { SEO } from "../components/seo"
+import { Hero } from "../components/hero"
+import { OpeningTimes } from "../components/opening-times"
+import { Intro } from "../components/intro"
+import { Treatments } from "../components/treatments"
+import { Contact } from "../components/contact"
+import { Prices } from "../components/prices"
+import { page, spacers } from "../theme"
+
+const SiteWrap = styled.main`
+  max-width: ${page.width};
+  margin: 0 auto;
+  padding: ${spacers.md};
+`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO title="G.T. Watson Chiropody and Podiatry" />
+    <Hero />
+    <SiteWrap>
+      <OpeningTimes />
+      <Intro />
+      <Treatments />
+      <Prices />
+      <Contact />
+    </SiteWrap>
   </Layout>
 )
 
