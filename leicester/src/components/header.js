@@ -60,7 +60,8 @@ export const Header = () => {
     <Nav>
       <BrandText>GT Watson</BrandText>
       <ContactText>
-        Call us on <ContactLink href="tel:01827 62079">01827 62079</ContactLink>
+        Call us on{" "}
+        <ContactLink href="tel:07908067799">07908 067799</ContactLink>
       </ContactText>
     </Nav>
   )
