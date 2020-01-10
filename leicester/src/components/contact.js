@@ -61,7 +61,7 @@ export const Contact = () => {
         width="100%"
         height="100%"
         id="gmap_canvas"
-        src="https://maps.google.com/maps?q=g%20t%20watson%20tamworth&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d117678.4100450505!2d-1.2265194154731445!3d52.674621072206484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1561418709586!5m2!1sen!2suk"
         frameBorder="0"
         scrolling="no"
         marginHeight={0}

@@ -24,7 +24,7 @@ const TableData = styled.td`
 export const OpeningTimes = () => {
   return (
     <Section>
-      <SectionHeader>Home Visiting Only</SectionHeader>
+      <SectionHeader>Home Visiting Times</SectionHeader>
       <Table>
         <tbody>
           <TableRow>
@@ -33,6 +33,10 @@ export const OpeningTimes = () => {
           </TableRow>
         </tbody>
       </Table>
+      <span>
+        Home visiting chiropody and podiatry for Markfield, Groby, Glenfield,
+        Anstey and areas to the west of Leicester.
+      </span>
     </Section>
   )
 }
