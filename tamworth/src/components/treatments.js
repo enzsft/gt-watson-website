@@ -109,11 +109,6 @@ export const Treatments = () => {
                 <ItemTitle>In growing and problem nails</ItemTitle>
               </ListItem>
               <ListItem>
-                <ItemTitle>
-                  Verruca – painless laser therapy and cryosurgery
-                </ItemTitle>
-              </ListItem>
-              <ListItem>
                 <ItemTitle>Diabetic foot care</ItemTitle>
               </ListItem>
               <ListItem>
