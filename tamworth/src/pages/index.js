@@ -23,9 +23,9 @@ const IndexPage = () => (
     <Hero />
     <SiteWrap>
       <OpeningTimes />
-      <Intro />
       <Treatments />
       <Prices />
+      <Intro />
       <Contact />
     </SiteWrap>
   </Layout>
