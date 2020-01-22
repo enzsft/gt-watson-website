@@ -73,10 +73,10 @@ export const Hero = () => {
         <HeroTitle>
           Chiropody and Podiatry that's tailored to your needs
         </HeroTitle>
-        <p>
+        <span>
           Leicester, Markfield, Groby, Glenfield, Anstey and areas west of
           Leicester
-        </p>
+        </span>
       </HeroContent>
     </HeroWrap>
   )

@@ -73,7 +73,7 @@ export const Hero = () => {
         <HeroTitle>
           Chiropody and Podiatry that's tailored to your needs
         </HeroTitle>
-        <p>Tamworth, Polesworth, Whittington & Lichfield</p>
+        <span>Tamworth, Polesworth, Whittington & Lichfield</span>
       </HeroContent>
     </HeroWrap>
   )
