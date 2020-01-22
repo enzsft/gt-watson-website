@@ -23,38 +23,37 @@ const HeroImage = styled(Img)`
   `)}
 `
 
-// const HeroContent = styled.div`
-//   position: absolute;
-//   top: 50%;
-//   left: 15%;
-//   right: 15%;
-//   transform: translateY(-50%);
+const HeroContent = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  transform: translateY(-50%);
 
-//   padding: ${spacers.md};
-//   background-color: rgba(0, 0, 0, 0.5);
+  padding: ${spacers.md};
+  background-color: rgba(0, 0, 0, 0.7);
+  color: ${colors.white};
 
-//   ${md(`
-//       padding: ${spacers.lg} ${spacers.md};
-//     `)}
-// `
+  ${md(`
+      padding: ${spacers.lg} ${spacers.md};
+    `)}
+`
 
-// const HeroTitle = styled.h1`
-//   padding-bottom: ${spacers.sm};
+const HeroTitle = styled.h1`
+  padding-bottom: ${spacers.sm};
 
-//   font-size: ${typography.fontSizes.md};
+  font-size: ${typography.fontSizes.md};
 
-//   color: ${colors.white};
-
-//   ${md(`
-//       font-size: ${typography.fontSizes.xl};
-//       padding-bottom: ${spacers.md};
-//     `)}
-// `
+  ${md(`
+      font-size: ${typography.fontSizes.md};
+      padding-bottom: ${spacers.md};
+    `)}
+`
 
 export const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      heroImage: file(relativePath: { eq: "surgery-sign.jpg" }) {
+      heroImage: file(relativePath: { eq: "hero.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1920) {
             ...GatsbyImageSharpFluid
@@ -68,11 +67,14 @@ export const Hero = () => {
     <HeroWrap>
       <HeroImage
         fluid={data.heroImage.childImageSharp.fluid}
-        alt="Podiatry and Chiropody that's tailored to your needs"
+        alt="Surgery image"
       />
-      {/* <HeroContent>
-        <HeroTitle>Chiropody that's tailored to your needs</HeroTitle>
-      </HeroContent> */}
+      <HeroContent>
+        <HeroTitle>
+          Chiropody and Podiatry that's tailored to your needs
+        </HeroTitle>
+        <p>Tamworth, Polesworth, Whittington & Lichfield</p>
+      </HeroContent>
     </HeroWrap>
   )
 }

@@ -30,13 +30,6 @@ const ImageSliderContaner = styled.div`
 export const Treatments = () => {
   const data = useStaticQuery(graphql`
     query {
-      surgeryImage: file(relativePath: { eq: "surgery-inner.jpg" }) {
-        childImageSharp {
-          fixed {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
       foot1Image: file(relativePath: { eq: "foot-1.jpg" }) {
         childImageSharp {
           fixed {
@@ -128,11 +121,6 @@ export const Treatments = () => {
           <NarrowColumn>
             <SliderContainer>
               <Slider dots autoplay infinite fade autoplaySpeed={3000}>
-                <ImageSliderContaner>
-                  <SliderImage
-                    fixed={data.surgeryImage.childImageSharp.fixed}
-                  />
-                </ImageSliderContaner>
                 <ImageSliderContaner>
                   <SliderImage fixed={data.foot1Image.childImageSharp.fixed} />
                 </ImageSliderContaner>

@@ -22,10 +22,10 @@ const IndexPage = () => (
     <SEO title="G.T. Watson Chiropody and Podiatry" />
     <Hero />
     <SiteWrap>
+      <Intro />
       <OpeningTimes />
       <Treatments />
       <Prices />
-      <Intro />
       <Contact />
     </SiteWrap>
   </Layout>
