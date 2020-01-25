@@ -96,12 +96,11 @@ export const Intro = () => {
       </Columns>
       <TextContainer>
         <p>
-          Our Chiropody practice is conveniently located near the centre of
-          Tamworth. The well established clinic is a private practice and has
-          been owned and operated by Gordon Watson and Lisa Scott-Watson for
-          over 29 years. The practice aims to provide the highest quality foot
-          care at competitive prices in comfortable and professional
-          surroundings.
+          The visiting practice is centered around Coalville, Loughborough,
+          Anstey, Glenfield, Braunstone Frith, Botcheson and Markfield. Owned
+          and operated by Gordon Watson for 10 years. The practice aims to
+          provide the highest quality footcare at competitive prices in your
+          home. Gordon has been practicing for 35 years.
         </p>
       </TextContainer>
     </Section>
