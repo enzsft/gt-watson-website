@@ -10,13 +10,11 @@ const Nav = styled.nav`
   max-width: ${page.width};
   height: ${nav.height.def};
   margin: 0 auto;
-  padding: ${spacers.sm} ${spacers.md};
+  padding: 0 ${spacers.md};
 
   ${sm(`
     height: ${nav.height.md};
     display: flex;
-    padding: ${spacers.md};
-    align-items: baseline;
   `)}
 `
 
@@ -24,12 +22,25 @@ const BrandText = styled.span`
   display: block;
   font-family: ${typography.fontFamily};
   padding-right: ${spacers.md};
-  font-size: ${typography.fontSizes.lg};
+  font-size: ${typography.fontSizes.md};
   color: ${colors.black};
   opacity: 1;
 
   ${sm(`
-    font-size: ${typography.fontSizes.xl};
+    font-size: ${typography.fontSizes.lg};
+  `)}
+`
+
+const BrandSubText = styled.span`
+  display: block;
+  font-family: ${typography.fontFamily};
+  padding-right: ${spacers.md};
+  font-size: ${typography.fontSizes.xs};
+  color: ${colors.black};
+  opacity: 1;
+
+  ${sm(`
+    font-size: ${typography.fontSizes.sm};
   `)}
 `
 
@@ -58,7 +69,10 @@ const ContactLink = styled.a`
 export const Header = () => {
   return (
     <Nav>
-      <BrandText>GT Watson</BrandText>
+      <div>
+        <BrandText>GT Watson</BrandText>
+        <BrandSubText>BSc (Hons), F.S.S.Ch.,M.B.Ch.A</BrandSubText>
+      </div>
       <ContactText>
         Call us on <ContactLink href="tel:01827 62079">01827 62079</ContactLink>
       </ContactText>

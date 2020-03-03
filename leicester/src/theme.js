@@ -20,7 +20,7 @@ export const layers = {
 
 export const nav = {
   height: {
-    def: "83",
+    def: "80px",
     md: "87px",
   },
 }
@@ -40,6 +40,7 @@ export const spacers = {
 export const typography = {
   baseFontSize: "18px",
   fontSizes: {
+    xs: "0.8rem",
     sm: "1rem",
     md: "1.4rem",
     lg: "1.8rem",
