@@ -4,8 +4,8 @@
 rm -rf releases/tamworth
 rm -rf releases/leicester
 
-mkdir releases/tamworth
-mkdir releases/leicester
+mkdir -p releases/tamworth
+mkdir -p releases/leicester
 
 # build
 cd tamworth

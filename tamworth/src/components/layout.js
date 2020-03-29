@@ -10,11 +10,13 @@ import PropTypes from "prop-types"
 import { GlobalStyles } from "./global-styles"
 import { Header } from "./header"
 import { Footer } from "./footer"
+import { NoticeBanner } from "./notice-banner"
 
 export const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
+      <NoticeBanner />
       <Header />
       {children}
       <Footer />
