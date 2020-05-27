@@ -1,11 +1,18 @@
-# Tamworth To Do
+# GT Watson sites
 
-- better resolution hero picture
-- better pic of gordon
-- better pic of lisa
+# Getting started
 
-# Leicester To Do
+```
+# develop on tamworth site
+cd tamworth
+yarn
+yarn develop
 
-- better resolution hero picture
-- better pic of gordon
-- better pic of lisa
+# develop on leicester site
+cd leicester
+yarn
+yarn develop
+
+# build both sites
+./build.sh
+```

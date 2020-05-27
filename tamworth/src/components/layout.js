@@ -16,7 +16,6 @@ export const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
-      <NoticeBanner />
       <Header />
       {children}
       <Footer />

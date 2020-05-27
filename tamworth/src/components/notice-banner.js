@@ -13,12 +13,6 @@ const Banner = styled.div`
   font-weight: 600;
 `
 
-export const NoticeBanner = () => {
-  return (
-    <Banner>
-      Please note that during the Corvid-19 pandemic we are able to offer
-      emergency treatment in certain circumstances. Please contact us for
-      further advice and we will call you back ASAP.
-    </Banner>
-  )
+export const NoticeBanner = props => {
+  return <Banner>{props.children}</Banner>
 }
