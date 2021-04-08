@@ -3,6 +3,11 @@ import styled, { css } from "styled-components"
 import { page, nav, spacers, colors, typography } from "../theme"
 import { sm } from "../utils"
 
+const NavOuter = styled.div`
+  box-shadow: 8px 8px 10px #ccc;
+  margin: 0 auto;
+`
+
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -68,14 +73,17 @@ const ContactLink = styled.a`
 
 export const Header = () => {
   return (
-    <Nav>
-      <div>
-        <BrandText>GT Watson</BrandText>
-        <BrandSubText>BSc (Hons), F.S.S.Ch.,M.B.Ch.A</BrandSubText>
-      </div>
-      <ContactText>
-        Call us on <ContactLink href="tel:01827 62079">01827 62079</ContactLink>
-      </ContactText>
-    </Nav>
+    <NavOuter>
+      <Nav>
+        <div>
+          <BrandText>GT Watson</BrandText>
+          <BrandSubText>BSc (Hons), F.S.S.Ch.,M.B.Ch.A</BrandSubText>
+        </div>
+        <ContactText>
+          Call us on{" "}
+          <ContactLink href="tel:01827 62079">01827 62079</ContactLink>
+        </ContactText>
+      </Nav>
+    </NavOuter>
   )
 }
