@@ -50,11 +50,7 @@ export const OpeningTimes = () => {
               <tbody>
                 <TableRow>
                   <TableData>Mon - Thurs</TableData>
-                  <TableData>8:00am - 5:30pm</TableData>
-                </TableRow>
-                <TableRow>
-                  <TableData>Fri</TableData>
-                  <TableData>8:00am - 4:00pm</TableData>
+                  <TableData>9:00am - 4:00pm</TableData>
                 </TableRow>
               </tbody>
             </Table>
