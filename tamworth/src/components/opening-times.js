@@ -1,6 +1,9 @@
 import React from "react"
 import styled from "styled-components"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 
+import { Columns, NarrowColumn, WideColumn } from "./columns"
 import { Section, SectionHeader } from "./section"
 import { spacers } from "../theme"
 
@@ -22,25 +25,42 @@ const TableData = styled.td`
 `
 
 export const OpeningTimes = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      houseImage: file(relativePath: { eq: "house.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Section>
       <SectionHeader>Opening Times</SectionHeader>
-      <Table>
-        <tbody>
-          <TableRow>
-            <TableData>Mon - Thurs</TableData>
-            <TableData>8:00am - 5:30pm</TableData>
-          </TableRow>
-          <TableRow>
-            <TableData>Fri</TableData>
-            <TableData>8:00am - 4:00pm</TableData>
-          </TableRow>
-        </tbody>
-      </Table>
-      <span>
-        Tamworth area home visited by arrangement including Polesworth,
-        Kingsbury, Lichfield and Measham.
-      </span>
+      <Columns>
+        <NarrowColumn>
+          <Img fluid={data.houseImage.childImageSharp.fluid} alt="Surgery" />
+        </NarrowColumn>
+        <WideColumn>
+          <>
+            <Table>
+              <tbody>
+                <TableRow>
+                  <TableData>Mon - Fri</TableData>
+                  <TableData>9:00am - 4:00pm</TableData>
+                </TableRow>
+              </tbody>
+            </Table>
+            <span>
+              Tamworth area home visited by arrangement including Polesworth,
+              Kingsbury, Lichfield and Measham.
+            </span>
+          </>
+        </WideColumn>
+      </Columns>
     </Section>
   )
 }

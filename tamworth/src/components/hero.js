@@ -3,40 +3,27 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 
-import { colors, nav, spacers, typography } from "../theme"
+import { spacers, typography } from "../theme"
 import { md } from "../utils"
 
-const HeroWrap = styled.div`
+const HeroArea = styled.div`
   position: relative;
-  text-align: center;
-`
-
-const HeroImage = styled(Img)`
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100vh - ${nav.height.def});
-
-  ${md(`
-      height: calc(100vh - ${nav.height.md});
-  `)}
 `
 
 const HeroContent = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 15%;
-  right: 15%;
-  transform: translateY(-50%);
+  max-width: 50rem;
+  margin: 0 auto;
 
   padding: ${spacers.md};
-  background-color: rgba(0, 0, 0, 0.7);
-  color: ${colors.white};
 
   ${md(`
       padding: ${spacers.lg} ${spacers.md};
     `)}
+
+  text-align: center;
 `
 
 const HeroTitle = styled.h1`
@@ -53,7 +40,7 @@ const HeroTitle = styled.h1`
 export const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      heroImage: file(relativePath: { eq: "hero.jpg" }) {
+      heroBrandImage: file(relativePath: { eq: "hero-brand.png" }) {
         childImageSharp {
           fluid(maxWidth: 1920) {
             ...GatsbyImageSharpFluid
@@ -64,17 +51,17 @@ export const Hero = () => {
   `)
 
   return (
-    <HeroWrap>
-      <HeroImage
-        fluid={data.heroImage.childImageSharp.fluid}
-        alt="Surgery image"
-      />
+    <HeroArea>
       <HeroContent>
+        <Img
+          fluid={data.heroBrandImage.childImageSharp.fluid}
+          alt="GT Watson Chiropody Clinic"
+        />
         <HeroTitle>
           Chiropody and Podiatry that's tailored to your needs
         </HeroTitle>
         <span>Tamworth, Polesworth, Whittington & Lichfield</span>
       </HeroContent>
-    </HeroWrap>
+    </HeroArea>
   )
 }
