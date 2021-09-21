@@ -12,10 +12,10 @@ export const Prices = () => {
         <ListItem>
           <ItemTitle>Home visit inclusive of routine treatment</ItemTitle>
           <div>
-            <span>£28.00 - 1 person</span>
+            <span>£30.00 - 1 person</span>
           </div>
           <div>
-            <span>£44.00 - 2 person</span>
+            <span>£50.00 - 2 person</span>
           </div>
         </ListItem>
         <ListItem>
